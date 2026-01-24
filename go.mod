@@ -1,4 +1,4 @@
-module github.com/srostyslav/smartbonus-api
+module github.com/smartbonus/smartbonus-api
 
 go 1.16
 
