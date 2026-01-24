@@ -8,7 +8,7 @@ With 100% test coverage.
 
 Use the `go` command:
 
-	$ go get github.com/srostyslav/smartbonus-api
+	$ go get github.com/smartbonus/smartbonus-api
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Smartbonus package tested against Go 1.13.
 package main
 
 import (
-    smartbonus "github.com/srostyslav/smartbonus-api"
+    smartbonus "github.com/smartbonus/smartbonus-api"
     "fmt"
 )
 
