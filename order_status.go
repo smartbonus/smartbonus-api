@@ -26,12 +26,13 @@ const (
 	DELIVERING
 	CANCEL_REQUEST
 	AWAITING_POST_PAYMENT
+	TRANSFERRED_FOR_CASHPOINT
 )
 
 func (OrderStatusType) getTitles() []string {
 	return []string{"new", "payment_pending", "payment_canceled", "processing", "awaiting_shipment", "awaiting_pickup", "completed", "canceled",
 		"refunded", "awaiting_web_payment", "web_payment_successful", "", "awaiting_for_collect", "collecting", "transferred_for_delivery",
-		"delivering", "cancel_request", "awaiting_post_payment"}
+		"delivering", "cancel_request", "awaiting_post_payment", "transferred_for_cashpoint"}
 }
 
 func (s OrderStatusType) Get(status string) (OrderStatusType, error) {
