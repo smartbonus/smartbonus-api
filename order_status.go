@@ -51,8 +51,9 @@ func (a OrderStatusType) String() string {
 // Body of status:
 type StatusBody struct {
 	Store
-	OrderId string          `json:"order_id"` // identifier of order in smartbonus
-	Status  OrderStatusType `json:"status"`   //  one of OrderStatuses
+	OrderId      string          `json:"order_id"` // identifier of order in smartbonus
+	Status       OrderStatusType `json:"status"`   //  one of OrderStatuses
+	DeliveryType *int            `json:"delivery_type"`
 }
 
 // Change status of order that created in smartbonus app
