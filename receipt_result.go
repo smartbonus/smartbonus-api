@@ -26,6 +26,21 @@ type ReceiptItems struct {
 	Price     float64 `json:"unit_price"` // price of product
 }
 
+// Coupon or discount applied to the receipt
+type DiscountInfoItem struct {
+	Title    string  `json:"title"`    // title of coupon or discount
+	UUID     string  `json:"uuid"`     // coupon identifier, empty for discounts
+	Earn     float64 `json:"earn"`     // amount of accrued bonuses
+	Discount float64 `json:"discount"` // amount of immediate discount
+	Withdraw float64 `json:"withdraw"` // amount of withdrawn bonuses
+}
+
+// Applied coupons and discounts
+type DiscountInfo struct {
+	Coupons   []DiscountInfoItem `json:"coupons"`
+	Discounts []DiscountInfoItem `json:"discounts"`
+}
+
 // Receipt response of discount and confirm methods
 type ReceiptResult struct {
 	Discount        float64        `json:"discount"`         // amount of discount: withdrawn + immediate
@@ -36,4 +51,5 @@ type ReceiptResult struct {
 	UserName        string         `json:"user_name"`        // client name
 	Items           []ReceiptItems `json:"nomenclatures"`    // list of products
 	AnalyticObjects AnalyticObject `json:"analytics_object"` // details of smartbonus modules
+	DiscountInfo    DiscountInfo   `json:"discountInfo"`     // applied coupons and discounts
 }
